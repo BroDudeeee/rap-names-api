@@ -1,7 +1,7 @@
 document.querySelector("button").addEventListener("click", async () => {
   try {
     const res = await fetch(
-      `https://rap-names-api-six.vercel.app/rappers/${document
+      `http://localhost:8000/rappers/${document
         .querySelector("input")
         .value.toLowerCase()}`
     );

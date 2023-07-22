@@ -9,6 +9,20 @@
     <h1>Rappers Birth names</h1>
     <input type="text" placeholder="Rapper" />
     <button>Get a Rapper</button>
-    <script src="js/main.js"></script>
+    <script>
+      document.querySelector("button").addEventListener("click", async () => {
+        try {
+          const res = await fetch(
+            `http://localhost:8000/rappers/${document
+              .querySelector("input")
+              .value.toLowerCase()}`
+          );
+          const data = await res.json();
+          console.log(data);
+        } catch (error) {
+          console.log(error);
+        }
+      });
+    </script>
   </body>
 </html>
